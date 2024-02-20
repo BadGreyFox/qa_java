@@ -3,21 +3,21 @@ package com.example.animals;
 import com.example.Feline;
 import com.example.LionAlex;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+
+@RunWith(MockitoJUnitRunner.class)
 public class LionAlexTest {
-    private final LionAlex lionAlex;
+    private final Feline feline = mock(Feline.class);
+    private final LionAlex lionAlex = new LionAlex(feline);
 
-    {
-        try {
-            lionAlex = new LionAlex(new Feline());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public LionAlexTest() throws Exception {
     }
-
 
     @Test
     public void getKittens() {

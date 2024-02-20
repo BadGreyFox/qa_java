@@ -28,6 +28,7 @@ public class FelineTest {
     public void checkGetKittensWithoutParams (){
         feline.getKittens();
         Mockito.verify(feline, Mockito.times(1)).getKittens(1);
+        assertEquals("Число котят должно быть '1'", 1, feline.getKittens());
     }
     @Test
     public void checkGetKittensWithParams (){
